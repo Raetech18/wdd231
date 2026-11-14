@@ -1,0 +1,75 @@
+:root{
+  --primary:#1d4e5f;
+  --secondary:#f2a541;
+  --background:#f7f5f0;
+  --surface:#ffffff;
+  --text:#1f2933;
+  --muted:#52606d;
+  --gold:#c9961a;
+  --silver:#8a94a0;
+  --member:#7a5c3e;
+  --font:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body{font-family:var(--font);background:var(--background);color:var(--text);line-height:1.5;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--primary)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--secondary);outline-offset:2px}
+
+/* Header + nav (mobile first) */
+header{background:var(--primary);color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:.6rem 1rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-weight:700;font-size:1.25rem;line-height:1.1}
+.brand img{background:#fff;border-radius:50%;padding:3px}
+.brand small{display:block;font-size:.7rem;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+#menu-button{background:none;border:2px solid #fff;border-radius:6px;width:44px;height:44px;display:grid;place-items:center}
+.bars,.bars::before,.bars::after{display:block;width:22px;height:2px;background:#fff;content:"";transition:transform .2s,opacity .2s}
+.bars{position:relative}
+.bars::before{position:absolute;top:-7px}
+.bars::after{position:absolute;top:7px}
+#menu-button[aria-expanded="true"] .bars{background:transparent}
+#menu-button[aria-expanded="true"] .bars::before{transform:translateY(7px) rotate(45deg)}
+#menu-button[aria-expanded="true"] .bars::after{transform:translateY(-7px) rotate(-45deg)}
+nav{flex-basis:100%;display:none}
+nav.open{display:block}
+nav ul{list-style:none;margin:.6rem 0 0}
+nav a{display:block;padding:.75rem 1rem;color:#fff;text-decoration:none;border-top:1px solid rgb(255 255 255 / .25)}
+nav a:hover{background:rgb(255 255 255 / .12)}
+nav a[aria-current="page"]{background:var(--secondary);color:var(--text);font-weight:700}
+
+/* Main */
+main{flex:1;padding:1.25rem 1rem 2rem;width:100%;max-width:1200px;margin-inline:auto}
+h1{color:var(--primary);margin-bottom:.25rem}
+.intro{color:var(--muted)}
+
+.view-toggle{display:flex;gap:.5rem;margin:1rem 0}
+.view-toggle button{padding:.5rem 1.25rem;border:2px solid var(--primary);background:var(--surface);color:var(--primary);border-radius:6px;font-weight:600}
+.view-toggle button[aria-pressed="true"]{background:var(--primary);color:#fff}
+
+/* Member cards */
+#members{display:grid;gap:1rem;grid-template-columns:1fr}
+.card{background:var(--surface);border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgb(0 0 0 / .15);display:flex;flex-direction:column;border-top:5px solid var(--member)}
+.card.level-2{border-top-color:var(--silver)}
+.card.level-3{border-top-color:var(--gold)}
+.card img{width:100%;aspect-ratio:3/2;object-fit:cover;background:#dde5ea}
+.card-body{padding:.9rem 1rem 1.1rem;overflow-wrap:anywhere}
+.card h2{font-size:1.2rem;margin-bottom:.1rem;color:var(--primary)}
+.tagline{font-style:italic;color:var(--muted);margin-bottom:.6rem}
+.card p{margin-bottom:.35rem}
+.card .label{font-weight:700}
+.badge{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.15rem .6rem;border-radius:999px;color:#fff;background:var(--member);margin-bottom:.5rem}
+.level-2 .badge{background:#5f6b78}
+.level-3 .badge{background:var(--gold);color:#1f2933}
+.loading,.error{grid-column:1/-1}
+.error{color:#b42318;font-weight:600}
+
+/* List view = one column, simple rows */
+#members.list{grid-template-columns:1fr}
+#members.list .card{flex-direction:row;align-items:center}
+#members.list .card img{display:none}
+#members.list .card-body{width:100%}
+#members.list .description{display:none}
+
+/* Footer */
+footer{background:var(--primary);color:#fff;padding:1.25rem 1rem;display:grid;gap:1.25rem;text-align:center}
+footer h2{font-size:1.05rem;color:var(--secondary);margin-bottom:.4rem}
+footer a{color:#fff}
+footer ul{list-style:none;margin:0;display:flex;gap:1rem;justify-content:center}
+footer p{margin-bottom:.2rem}

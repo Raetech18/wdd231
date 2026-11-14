@@ -1,0 +1,19 @@
+/* Applies at min-width: 700px */
+header{padding:.75rem 2rem;flex-wrap:nowrap}
+#menu-button{display:none}
+nav{display:block;flex-basis:auto}
+nav ul{display:flex;gap:.25rem;margin:0}
+nav a{border-top:0;border-radius:6px;padding:.6rem 1rem}
+
+main{padding:2rem}
+#members.grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+#members.list .card-body{display:grid;grid-template-columns:2fr 3fr 2fr;gap:.25rem 1.5rem;align-items:center}
+#members.list .card-body > *{margin:0}
+
+footer{grid-template-columns:repeat(3,1fr);text-align:left;padding:1.5rem 2rem}
+footer ul{justify-content:flex-start}
+.footer-credits{text-align:right}
+
+@media (min-width:1000px){
+  #members.grid{grid-template-columns:repeat(3,1fr)}
+}

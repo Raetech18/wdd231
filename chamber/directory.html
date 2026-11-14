@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Business Directory | Lagos Chamber of Commerce</title>
+  <meta name="description" content="Browse the Lagos Chamber of Commerce member directory. Find local restaurants, shops, and services, and see contact details for each member.">
+  <meta name="author" content="Racheal Pelumi Nwachukwu">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Business Directory | Lagos Chamber of Commerce">
+  <meta property="og:description" content="Browse member businesses of the Lagos Chamber of Commerce and shop local.">
+  <meta property="og:image" content="https://raetech18.github.io/wdd231/chamber/images/og-image.png">
+  <meta property="og:url" content="https://raetech18.github.io/wdd231/chamber/directory.html">
+
+  <link rel="icon" href="chamber/images/favicon.png" type="image/svg+xml">
+
+  <link rel="stylesheet" href="chamber/styles/normalize.css">
+  <link rel="stylesheet" href="chamber/styles/small.css">
+  <link rel="stylesheet" href="chamber/styles/larger.css" media="(min-width: 700px)">
+
+  <script src="chamber/scripts/directory.js" type="module"></script>
+  <script src="chamber/scripts/shared.js" type="module"></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">
+      <img src="chamber/images/logo.png" alt="" width="48" height="48">
+      <span>Lagos <small>Chamber of Commerce</small></span>
+    </a>
+    <button id="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+      <span class="bars" aria-hidden="true"></span>
+    </button>
+    <nav id="primary-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html" aria-current="page">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Member Directory</h1>
+    <p class="intro">Discover the businesses that make Lagos work. Choose a view below.</p>
+
+    <div class="view-toggle" role="group" aria-label="Choose directory layout">
+      <button type="button" id="grid-btn" aria-pressed="true">Grid</button>
+      <button type="button" id="list-btn" aria-pressed="false">List</button>
+    </div>
+
+    <section id="members" class="grid" aria-live="polite" aria-label="Chamber members">
+      <p class="loading">Loading members&hellip;</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contact">
+      <h2>Lagos Chamber of Commerce</h2>
+      <address>
+        100 Broad Street, Lagos Island<br>
+        Lagos, Nigeria<br>
+        <a href="tel:+2348059807391">+234 8 0598 07391</a><br>
+        <a href="mailto:info@lagoschamberofcommerce.com">info@lagoschamberofcommerce.com</a>
+      </address>
+    </div>
+    <div class="footer-social">
+      <h2>Follow Us</h2>
+      <ul>
+        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://x.com/" target="_blank" rel="noopener">X</a></li>
+      </ul>
+    </div>
+    <div class="footer-credits">
+      <p>&copy; <span id="currentyear"></span> Lagos Chamber of Commerce</p>
+      <p>Racheal Pelumi Nwachukwu</p>
+      <p>WDD 231</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+</body>
+</html>

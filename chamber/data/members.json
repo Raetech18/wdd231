@@ -1,0 +1,81 @@
+{
+  "members": [
+    {
+      "name": "Eko Bakery",
+      "tagline": "Fresh bread, baked daily",
+      "address": "12 Marina Road, Lagos Island",
+      "phone": "+234 801 000 0111",
+      "website": "https://www.ekobakery.example",
+      "membership": 3,
+      "image": "bakery.webp",
+      "description": "Family-owned bakery serving bread, meat pies, and custom cakes.",
+      "founded": 1998
+    },
+    {
+      "name": "Marina Hardware",
+      "tagline": "Everything to fix it",
+      "address": "45 Broad Street, Lagos Island",
+      "phone": "+234 802 000 0122",
+      "website": "https://www.marinahardware.example",
+      "membership": 2,
+      "image": "hardware.webp",
+      "description": "Tools, paint, and building supplies for home and site projects.",
+      "founded": 1985
+    },
+    {
+      "name": "Lekki Dental Care",
+      "tagline": "Smiles for the whole family",
+      "address": "8 Admiralty Way, Lekki Phase 1",
+      "phone": "+234 803 000 0133",
+      "website": "https://www.lekkidental.example",
+      "membership": 3,
+      "image": "dental.webp",
+      "description": "Preventive, cosmetic, and emergency dental care.",
+      "founded": 2005
+    },
+    {
+      "name": "Ikoyi Fitness",
+      "tagline": "Strong together",
+      "address": "21 Awolowo Road, Ikoyi",
+      "phone": "+234 804 000 0144",
+      "website": "https://www.ikoyifitness.example",
+      "membership": 2,
+      "image": "fitness.webp",
+      "description": "Group classes, personal training, and early-morning gym access.",
+      "founded": 2012
+    },
+    {
+      "name": "Yaba Roast Cafe",
+      "tagline": "Locally roasted, locally loved",
+      "address": "30 Herbert Macaulay Way, Yaba",
+      "phone": "+234 805 000 0155",
+      "website": "https://www.yabaroast.example",
+      "membership": 1,
+      "image": "cafe.webp",
+      "description": "Fresh coffee, light lunches, and a quiet space to work.",
+      "founded": 2016
+    },
+    {
+      "name": "Victoria Island Accounting",
+      "tagline": "Clear numbers, clear future",
+      "address": "77 Ahmadu Bello Way, Victoria Island",
+      "phone": "+234 806 000 0166",
+      "website": "https://www.viaccounting.example",
+      "membership": 1,
+      "image": "accounting.webp",
+      "description": "Bookkeeping, tax filing, and advisory for small businesses.",
+      "founded": 2009
+    },
+    {
+      "name": "Surulere Florist",
+      "tagline": "Flowers for every moment",
+      "address": "19 Adeniran Ogunsanya St, Surulere",
+      "phone": "+234 807 000 0177",
+      "website": "https://www.surulereflorist.example",
+      "membership": 1,
+      "image": "florist.webp",
+      "description": "Bouquets, event decor, and same-day delivery across Lagos.",
+      "founded": 2001
+    }
+  ]
+}
