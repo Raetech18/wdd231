@@ -77,29 +77,35 @@ header {
   place-items: center;
 }
 
-.bars,
-.bars::before,
-.bars::after {
+.bars {
+  position: relative;
   display: block;
   width: 22px;
   height: 2px;
   background-color: #ffffff;
-  content: "";
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.bars {
-  position: relative;
+  transition: background-color 0.2s;
 }
 
 .bars::before {
+  content: "";
   position: absolute;
   top: -7px;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: transform 0.2s;
 }
 
 .bars::after {
+  content: "";
   position: absolute;
   top: 7px;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: transform 0.2s;
 }
 
 #menu-button[aria-expanded="true"] .bars {
@@ -263,12 +269,12 @@ h1 {
   color: var(--text);
 }
 
-.loading,
-.error {
+.loading {
   grid-column: 1 / -1;
 }
 
 .error {
+  grid-column: 1 / -1;
   color: #b42318;
   font-weight: 600;
 }
@@ -307,7 +313,7 @@ footer {
 
 footer h2 {
   font-size: 1.05rem;
-  color: var(--secondary);
+  color: #ffc266;
   margin-bottom: 0.4rem;
 }
 
