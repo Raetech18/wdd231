@@ -1,5 +1,5 @@
 // ---- Settings ----
-const API_KEY = "YOUR_OPENWEATHERMAP_KEY"; // paste your own key
+const API_KEY = "80b5398faf0fba5cf84ba2010ec753bd";
 const LAT = 6.4541;  // Lagos Island
 const LON = 3.3947;
 const MEMBERS_URL = "data/members.json";
@@ -74,7 +74,7 @@ function buildCard(m) {
   name.textContent = m.name;
 
   const logo = document.createElement("img");
-  logo.src = m.image ?? m.logo;
+  logo.src = `images/${m.image}`;
   logo.alt = `${m.name} logo`;
   logo.loading = "lazy";
   logo.width = 120;
