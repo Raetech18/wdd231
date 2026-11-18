@@ -1,6 +1,13 @@
-.home { display: grid; gap: 1.25rem; padding: 1rem; }
+.home {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1rem;
+}
 
-.home .hero { position: relative; }
+.home .hero {
+  position: relative;
+}
+
 .home .hero img {
   display: block;
   width: 100%;
@@ -9,6 +16,7 @@
   object-fit: cover;
   border-radius: 6px;
 }
+
 .home .hero-text {
   position: absolute;
   inset: auto 0 0 0;
@@ -16,32 +24,98 @@
   display: grid;
   gap: 0.75rem;
   justify-items: start;
-  background: linear-gradient(to top, rgb(0 0 0 / 0.65), transparent);
-  color: #fff;
+  background: linear-gradient(to top, #000000a6, #00000000);
+  color: #ffffff;
   border-radius: 0 0 6px 6px;
 }
-.home .hero h1 { margin: 0; font-size: 1.4rem; }
+
+.home .hero h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
 .home .cta {
-  background: #f2b632;
-  color: #1a1a1a;
+  background: var(--secondary);
+  color: var(--text);
   padding: 0.7rem 1.4rem;
   font-weight: 700;
   text-decoration: none;
   border-radius: 4px;
 }
-.home .cta:hover, .home .cta:focus-visible { background: #fff; outline: 3px solid #f2b632; }
 
-.home .events, .home .weather { border-left: 4px solid currentColor; padding: 0.5rem 1rem; }
-.home .events ul { padding-left: 1.1rem; }
-.home .current { display: flex; align-items: center; gap: 1rem; }
-.home .temp { font-size: 2rem; font-weight: 700; margin: 0; }
-.home #forecast { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; }
+.home .cta:hover,
+.home .cta:focus-visible {
+  background: #ffffff;
+  outline: 3px solid var(--secondary);
+}
 
-.home #spotlight-cards { display: grid; gap: 1rem; }
-.home .spot { border: 1px solid #ccc; padding: 1rem; text-align: center; border-radius: 6px; }
-.home .spot img { max-width: 120px; height: auto; }
-.home .spot h3 { margin: 0.5rem 0; }
-.home .spot p { margin: 0.25rem 0; }
-.home .badge { display: inline-block; padding: 0.15rem 0.7rem; border-radius: 1rem; font-weight: 700; font-size: 0.85rem; }
-.home .badge.gold { background: #f2c94c; color: #1a1a1a; }
-.home .badge.silver { background: #d5d9dd; color: #1a1a1a; }
+.home .events,
+.home .weather {
+  border-left: 4px solid var(--primary);
+  padding: 0.5rem 1rem;
+}
+
+.home .events ul {
+  padding-left: 1.1rem;
+}
+
+.home .current {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home .temp {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.home #forecast {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.home #spotlight-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.home .spot {
+  text-align: center;
+}
+
+.home .spot img {
+  max-width: 120px;
+  height: auto;
+}
+
+.home .spot p {
+  margin: 0.25rem 0;
+}
+
+/* 700px and up: two columns, three spotlight cards across */
+@media (min-width: 700px) {
+  .home {
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  .home .hero,
+  .home .spotlights {
+    grid-column: 1 / -1;
+  }
+
+  .home .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .home #spotlight-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -27,10 +27,13 @@ function displayCurrent(data) {
   document.querySelector("#current-temp").textContent = Math.round(data.main.temp);
   document.querySelector("#current-desc").textContent =
     w.description.replace(/\b\w/g, c => c.toUpperCase());
-  const icon = document.querySelector("#weather-icon");
+
+  const icon = document.createElement("img");
   icon.src = `https://openweathermap.org/img/wn/${w.icon}@2x.png`;
   icon.alt = w.description;
-  icon.hidden = false;
+  icon.width = 64;
+  icon.height = 64;
+  document.querySelector(".current").prepend(icon);
 }
 
 function displayForecast(data) {
@@ -44,10 +47,16 @@ function displayForecast(data) {
     const gap = Math.abs(d.getHours() - 12);
     if (!byDay.has(key) || gap < byDay.get(key).gap) byDay.set(key, { item, gap, d });
   }
-  const days = [...byDay.values()].slice(0, 3);
-  document.querySelector("#forecast").innerHTML = days.map(({ item, d }) =>
-    `<li><strong>${d.toLocaleDateString("en-NG", { weekday: "long" })}:</strong> ${Math.round(item.main.temp)}&deg;C</li>`
-  ).join("");
+
+  const list = document.querySelector("#forecast");
+  list.replaceChildren();
+  [...byDay.values()].slice(0, 3).forEach(({ item, d }) => {
+    const li = document.createElement("li");
+    const day = document.createElement("strong");
+    day.textContent = `${d.toLocaleDateString("en-NG", { weekday: "long" })}: `;
+    li.append(day, `${Math.round(item.main.temp)}\u00B0C`);
+    list.append(li);
+  });
 }
 
 // ---- Spotlights ----
@@ -55,6 +64,43 @@ const levelName = m => {
   const l = String(m.membership ?? m.membershipLevel ?? m.level).toLowerCase();
   return l === "3" ? "gold" : l === "2" ? "silver" : l;
 };
+
+function buildCard(m) {
+  const level = levelName(m);
+  const card = document.createElement("article");
+  card.className = `spot card level-${level === "gold" ? 3 : 2}`;
+
+  const name = document.createElement("h3");
+  name.textContent = m.name;
+
+  const logo = document.createElement("img");
+  logo.src = m.image ?? m.logo;
+  logo.alt = `${m.name} logo`;
+  logo.loading = "lazy";
+  logo.width = 120;
+  logo.height = 120;
+
+  const phone = document.createElement("p");
+  phone.textContent = m.phone;
+
+  const address = document.createElement("p");
+  address.textContent = m.address;
+
+  const site = document.createElement("p");
+  const link = document.createElement("a");
+  link.href = m.website ?? m.url;
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.textContent = "Visit website";
+  site.append(link);
+
+  const badge = document.createElement("span");
+  badge.className = "badge";
+  badge.textContent = `${level[0].toUpperCase()}${level.slice(1)} member`;
+
+  card.append(name, logo, phone, address, site, badge);
+  return card;
+}
 
 async function loadSpotlights() {
   const container = document.querySelector("#spotlight-cards");
@@ -71,21 +117,10 @@ async function loadSpotlights() {
     }
     const count = Math.min(eligible.length, Math.random() < 0.5 ? 2 : 3);
 
-    container.innerHTML = eligible.slice(0, count).map(m => {
-      const level = levelName(m);
-      return `
-      <article class="spot">
-        <h3>${m.name}</h3>
-        <img src="${m.image ?? m.logo}" alt="${m.name} logo" loading="lazy" width="120" height="120">
-        <p>${m.phone}</p>
-        <p>${m.address}</p>
-        <p><a href="${m.website ?? m.url}" target="_blank" rel="noopener">Visit website</a></p>
-        <span class="badge ${level}">${level[0].toUpperCase() + level.slice(1)} member</span>
-      </article>`;
-    }).join("");
+    container.replaceChildren(...eligible.slice(0, count).map(buildCard));
   } catch (err) {
     console.error(err);
-    container.innerHTML = "<p>Member spotlights are unavailable right now.</p>";
+    container.textContent = "Member spotlights are unavailable right now.";
   }
 }
 
