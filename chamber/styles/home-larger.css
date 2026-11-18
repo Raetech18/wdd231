@@ -1,0 +1,4 @@
+.home { grid-template-columns: 1fr 1fr; max-width: 1200px; margin-inline: auto; }
+.home .hero, .home .spotlights { grid-column: 1 / -1; }
+.home .hero h1 { font-size: 2.2rem; }
+.home #spotlight-cards { grid-template-columns: repeat(3, 1fr); }
