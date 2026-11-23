@@ -1,0 +1,164 @@
+:root {
+  --navy: #10324a;
+  --teal: #0b6b61;
+  --amber: #9a4a00;
+  --mist: #f5f7fa;
+  --ink: #1f2933;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--mist);
+  color: var(--ink);
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+.font-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.font-body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+a {
+  color: var(--teal);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+header,
+footer {
+  padding: 1.5rem 1rem;
+  background: var(--navy);
+  color: var(--mist);
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 0.25rem 0 0;
+}
+
+nav {
+  padding: 0.75rem 1rem;
+  border-bottom: 3px solid var(--teal);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* Colors table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  padding-bottom: 0.5rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+th {
+  background: var(--navy);
+  color: var(--mist);
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.6rem;
+  border: 1px solid var(--navy);
+}
+
+.swatch {
+  display: block;
+  width: 3rem;
+  height: 2rem;
+  border: 1px solid var(--ink);
+}
+
+.swatch-navy {
+  background: var(--navy);
+}
+
+.swatch-teal {
+  background: var(--teal);
+}
+
+.swatch-amber {
+  background: var(--amber);
+}
+
+.swatch-mist {
+  background: var(--mist);
+}
+
+.swatch-ink {
+  background: var(--ink);
+}
+
+/* Wireframes */
+figure {
+  margin: 1rem 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--ink);
+}
+
+figcaption {
+  margin-top: 0.25rem;
+  color: var(--amber);
+  font-weight: 600;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+@media (min-width: 700px) {
+  header,
+  footer,
+  nav {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
