@@ -1,0 +1,127 @@
+/* Join page layout: form first, cards below on small screens */
+.join-layout {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.join-layout h1 {
+  grid-column: 1 / -1;
+}
+
+.join-form form {
+  display: grid;
+  gap: 1rem;
+}
+
+.join-form label {
+  display: grid;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #767676;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 400;
+}
+
+.join-form input:focus-visible,
+.join-form select:focus-visible,
+.join-form textarea:focus-visible,
+.level-cards a:focus-visible,
+.close-modal:focus-visible,
+button[type="submit"]:focus-visible {
+  outline: 3px solid #0b5cad;
+  outline-offset: 2px;
+}
+
+button[type="submit"],
+.close-modal {
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 4px;
+  background: #0b3d6b;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Membership cards */
+.level-cards {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  border-top-width: 6px;
+  background: #fff;
+  /* Page-load animation: cards slide in one after another */
+  opacity: 0;
+  animation: card-in 0.7s ease-out forwards;
+}
+
+.card:nth-of-type(1) { animation-delay: 0.1s; border-top-color: #4b7f52; }
+.card:nth-of-type(2) { animation-delay: 0.3s; border-top-color: #a8683b; }
+.card:nth-of-type(3) { animation-delay: 0.5s; border-top-color: #8a8f98; }
+.card:nth-of-type(4) { animation-delay: 0.7s; border-top-color: #c9a227; }
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { animation: none; opacity: 1; }
+}
+
+/* Modals */
+dialog {
+  max-width: 28rem;
+  border: 0;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
+/* Larger screens: cards to the right of the form */
+@media (min-width: 700px) {
+  .join-layout {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+    padding: 2rem;
+  }
+}
+
+/* Thank-you page */
+.thankyou {
+  max-width: 36rem;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.thankyou dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.thankyou dt {
+  font-weight: 600;
+}
+
+.thankyou dd {
+  margin: 0;
+}

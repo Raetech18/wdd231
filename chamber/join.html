@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join the Chamber | Lagos Chamber of Commerce</title>
+  <meta name="description" content="Apply for membership in the Lagos Chamber of Commerce and choose the level that fits your organization.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css" media="(min-width: 700px)">
+  <link rel="stylesheet" href="styles/join.css">
+  <script src="scripts/shared.js" type="module"></script>
+  <script src="scripts/join.js" type="module"></script>
+</head>
+<body>
+
+  <header>
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="" width="48" height="48">
+      <span>Lagos <small>Chamber of Commerce</small></span>
+    </a>
+    <button id="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+      <span class="bars" aria-hidden="true"></span>
+    </button>
+    <nav id="primary-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="join-layout">
+    <h1>Join the Lagos Chamber of Commerce</h1>
+
+    <section class="join-form" aria-labelledby="form-heading">
+      <h2 id="form-heading">Membership application</h2>
+
+      <form action="thankyou.html" method="get">
+        <label>First name
+          <input type="text" name="first" required autocomplete="given-name" title="Enter your first name">
+        </label>
+
+        <label>Last name
+          <input type="text" name="last" required autocomplete="family-name" title="Enter your last name">
+        </label>
+
+        <label>Your title in the organization
+          <input type="text" name="orgTitle" autocomplete="organization-title"
+                 pattern="[A-Za-z\- ]{7,}"
+                 title="At least 7 characters: letters, hyphens, and spaces only">
+        </label>
+
+        <label>Email address
+          <input type="email" name="email" required autocomplete="email"
+                 placeholder="name@example.com" title="Enter a valid email address">
+        </label>
+
+        <label>Mobile phone number
+          <input type="tel" name="phone" required autocomplete="tel" title="Enter your mobile phone number">
+        </label>
+
+        <label>Business or organization name
+          <input type="text" name="organization" required autocomplete="organization" title="Enter your business or organization name">
+        </label>
+
+        <label>Membership level
+          <select name="level" title="Choose a membership level">
+            <option value="np">NP Membership (non-profit, no fee)</option>
+            <option value="bronze">Bronze Membership</option>
+            <option value="silver">Silver Membership</option>
+            <option value="gold">Gold Membership</option>
+          </select>
+        </label>
+
+        <label>Business or organization description
+          <textarea name="description" rows="4" title="Briefly describe your business or organization"></textarea>
+        </label>
+
+        <input type="hidden" name="timestamp" id="timestamp">
+
+        <button type="submit">Submit application</button>
+      </form>
+    </section>
+
+    <section class="level-cards" aria-labelledby="levels-heading">
+      <h2 id="levels-heading">Membership levels</h2>
+
+      <div class="card np">
+        <h3>NP Membership</h3>
+        <a href="#modal-np" data-modal="modal-np">View benefits</a>
+      </div>
+      <div class="card bronze">
+        <h3>Bronze Membership</h3>
+        <a href="#modal-bronze" data-modal="modal-bronze">View benefits</a>
+      </div>
+      <div class="card silver">
+        <h3>Silver Membership</h3>
+        <a href="#modal-silver" data-modal="modal-silver">View benefits</a>
+      </div>
+      <div class="card gold">
+        <h3>Gold Membership</h3>
+        <a href="#modal-gold" data-modal="modal-gold">View benefits</a>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modal-np" aria-labelledby="np-title">
+    <h2 id="np-title">NP Membership</h2>
+    <p>For non-profit organizations. No fee.</p>
+    <ul>
+      <li>Listing in the member directory</li>
+      <li>Invitations to community networking events</li>
+      <li>Monthly chamber newsletter</li>
+    </ul>
+    <button class="close-modal" type="button">Close</button>
+  </dialog>
+
+  <dialog id="modal-bronze" aria-labelledby="bronze-title">
+    <h2 id="bronze-title">Bronze Membership</h2>
+    <p>An entry-level paid membership.</p>
+    <ul>
+      <li>Everything in NP Membership</li>
+      <li>Discounted tickets to chamber events</li>
+      <li>Access to quarterly training workshops</li>
+    </ul>
+    <button class="close-modal" type="button">Close</button>
+  </dialog>
+
+  <dialog id="modal-silver" aria-labelledby="silver-title">
+    <h2 id="silver-title">Silver Membership</h2>
+    <p>Greater visibility and more training.</p>
+    <ul>
+      <li>Everything in Bronze Membership</li>
+      <li>Larger event discounts</li>
+      <li>Advertising space on the chamber website</li>
+      <li>Rotating spotlight on the home page</li>
+    </ul>
+    <button class="close-modal" type="button">Close</button>
+  </dialog>
+
+  <dialog id="modal-gold" aria-labelledby="gold-title">
+    <h2 id="gold-title">Gold Membership</h2>
+    <p>Our highest level, with top placement.</p>
+    <ul>
+      <li>Everything in Silver Membership</li>
+      <li>Priority spotlight position on the home page</li>
+      <li>Free admission to selected events</li>
+      <li>Sponsor recognition at chamber functions</li>
+      <li>Exclusive leadership training sessions</li>
+    </ul>
+    <button class="close-modal" type="button">Close</button>
+  </dialog>
+
+  <<footer>
+    <div class="footer-contact">
+      <h2>Lagos Chamber of Commerce</h2>
+      <address>
+        100 Broad Street, Lagos Island<br>
+        Lagos, Nigeria<br>
+        <a href="tel:+2348059807391">+234 8 0598 07391</a><br>
+        <a href="mailto:info@lagoschamberofcommerce.com">info@lagoschamberofcommerce.com</a>
+      </address>
+    </div>
+    <div class="footer-social">
+      <h2>Follow Us</h2>
+      <ul>
+        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://x.com/" target="_blank" rel="noopener">X</a></li>
+      </ul>
+    </div>
+    <div class="footer-credits">
+      <p>&copy; <span id="currentyear"></span> Lagos Chamber of Commerce</p>
+      <p>Racheal Pelumi Nwachukwu</p>
+      <p>WDD 231</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+</body>
+</html>
